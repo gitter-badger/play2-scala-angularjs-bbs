@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+#GET     /                           controllers.Application.Index
+
+GET         /tweetList               controllers.Application.getTweetList(callback: String)
+#POST        /tweet/                  controllers.Application.postNewTweet
+GET         /tweet/:body             controllers.Application.newTweet(body:String)
+GET         /tweet/:id/update/:body  controllers.Application.updateTweet(id:Long,body:String)
+#PUT         /tweet/:id               controllers.Application.updateTweet(id: Long)
+#DELETE      /tweet/:id               controllers.Application.deleteTweet(id: Long)
+GET         /tweet/:id/delete        controllers.Application.deleteTweet(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /*file                  controllers.Assets.versioned(path="/public", file: Asset)
